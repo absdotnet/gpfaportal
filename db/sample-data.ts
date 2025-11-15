@@ -12,6 +12,18 @@ const sampleData = {
       AgentNumber: '582000',
       status: 'Issued',
     },
+    {
+      productType: 'Allianz IUL',
+      provider: 'Allianz Life Insurance',
+      description: 'Permanent Life for Supplement Tax-Free Retirement',
+      targetTotal: 5000.00,
+      policyNumber: '221222',
+      InsuredName: 'Faro Amiri',
+      SplitPercentage: 100,
+      splitWithID: '',
+      AgentNumber: '585858',
+      status: 'Issued',
+    },
   ],
 };
 
