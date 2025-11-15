@@ -4,3 +4,4 @@ export const APP_DESCRIPTION =
   'GPFA Portal for Brokers';
 export const SERVER_URL =
   process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000';
+  export const LATEST_PRODUCTION_LIMIT = Number(process.env.LATEST_PRODUCTION_LIMIT) || 10;

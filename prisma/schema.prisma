@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+   model Production {
+      id              String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+      productType String
+      provider    String
+      description String
+      targetTotal      Decimal      @default(0) @db.Decimal(12, 2)
+      policyNumber  String
+      InsuredName String
+      SplitPercentage Decimal @default(0) @db.Decimal(12, 2)
+      splitWithID String
+      AgentNumber String
+      status String
+      issuedAt   DateTime     @default(now()) @db.Timestamp(6)
+      createdAt   DateTime     @default(now()) @db.Timestamp(6)
+      updatedAt   DateTime     @default(now()) @db.Timestamp(6)
+    }
