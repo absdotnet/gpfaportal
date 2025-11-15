@@ -17,16 +17,16 @@ const adapter = new PrismaNeon(pool);
 export const prisma = new PrismaClient({ adapter }).$extends({
   result: {
     production: {
-      price: {
+      targetTotal: {
         compute(production) {
           return production.targetTotal.toString();
         },
       },
-      // rating: {
-      //   compute(production) {
-      //     return product.rating.toString();
-      //   },
-      // },
+      SplitPercentage: {
+        compute(production) {
+          return production.SplitPercentage.toString();
+        },
+      },
     },
   },
 });
